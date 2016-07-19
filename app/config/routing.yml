@@ -1,3 +1,3 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+altgeek_core:
+    resource: "@AltgeekCoreBundle/Resources/config/routing.yml"
+    prefix:   /

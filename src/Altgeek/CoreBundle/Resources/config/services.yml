@@ -1,0 +1,4 @@
+services:
+#    altgeek_core.example:
+#        class: Altgeek\CoreBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

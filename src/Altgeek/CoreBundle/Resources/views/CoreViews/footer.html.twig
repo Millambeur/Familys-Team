@@ -1,0 +1,37 @@
+{# src/CoreBundle/Ressources/views/CoreViews/footer.html.twig #}
+
+	{% block footer %}
+	<div id="footer">
+		<div id="footer_top">
+			<div id="footer_top_left" class="footer_top">
+				<div id="footer_top_left_title">
+					<p>{{ 'Pages'|trans }}</p>
+				</div>
+				<ul>
+				    <li><a href="{{ path('altgeek_core_homepage') }}">{{ 'Home'|trans }}</a></li>
+				</ul>
+			</div>
+			<div id="footer_top_middle" class="footer_top">
+				<div id="footer_top_middle_title">
+					<p>{{ 'Partners'|trans }}</p>
+				</div>
+				<ul>
+				    <li><a href="{{ path('altgeek_core_homepage') }}">{{ 'Home'|trans }}</a></li>
+				</ul>
+			</div>
+			<div id="footer_top_right" class="footer_top">
+				<div id="footer_top_right_title">
+					<p>{{ 'About Florian Chassot'|trans }}</p>
+				</div>
+				<ul>
+				    <li><a href="{{ path('altgeek_core_homepage') }}">{{ 'Home'|trans }}</a></li>
+				</ul>
+			</div>
+			<div class="fin_float">
+			</div>
+		</div>
+		<div id="footer_bottom">
+			<p>© Family's Team - 2016</p>
+		</div>
+	</div>
+	{% endblock %}
