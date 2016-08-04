@@ -1,0 +1,25 @@
+{# src/Altgeek/ForumBundle/Resources/views/UberTopic/edit.html.twig #}
+
+{% extends "AltgeekForumBundle::index.html.twig" %}
+
+{% block title %}
+  Modifier un UberTopic - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2>Modifier un UberTopic</h2>
+
+  {{ include("AltgeekForumBundle:UberTopic:form.html.twig") }}
+
+  <p>
+    Vous éditez un UberTopic déjà existant.
+  </p>
+
+  <p>
+    <a href="{{ path('altgeek_forum_ubertopic_view', {'id': uberTopic.id}) }}" class="btn btn-default">
+      Retour au UberTopic
+    </a>
+  </p>
+
+{% endblock %}

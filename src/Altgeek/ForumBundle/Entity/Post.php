@@ -204,11 +204,11 @@ class Post
     /**
      * Add previousVersion
      *
-     * @param \Altgeek\UserBundle\Entity\Post $previousVersion
+     * @param \Altgeek\ForumBundle\Entity\Post $previousVersion
      *
      * @return Post
      */
-    public function addPreviousVersion(\Altgeek\UserBundle\Entity\Post $previousVersion)
+    public function addPreviousVersion(\Altgeek\ForumBundle\Entity\Post $previousVersion)
     {
         $this->previousVersions[] = $previousVersion;
 
@@ -218,9 +218,9 @@ class Post
     /**
      * Remove previousVersion
      *
-     * @param \Altgeek\UserBundle\Entity\Post $previousVersion
+     * @param \Altgeek\ForumBundle\Entity\Post $previousVersion
      */
-    public function removePreviousVersion(\Altgeek\UserBundle\Entity\Post $previousVersion)
+    public function removePreviousVersion(\Altgeek\ForumBundle\Entity\Post $previousVersion)
     {
         $this->previousVersions->removeElement($previousVersion);
     }

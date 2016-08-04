@@ -1,0 +1,27 @@
+{# src/Altgeek/ForumBundle/Resources/views/UberTopic/index.html.twig #}
+
+{% extends "AltgeekForumBundle::index.html.twig" %}
+
+{% block title %}
+  Liste des UberTopics - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2>Liste des UberTopics</h2>
+
+  <ul>
+    {% for uberTopic in listUberTopics %}
+      <li>
+        <a href="{{ path('altgeek_forum_ubertopic_view', {'id': uberTopic.id}) }}">
+          {{ uberTopic.title }}
+        </a>
+        par {{ uberTopic.author }},
+        categorie {{ uberTopic.category }}
+      </li>
+    {% else %}
+      <li>Pas (encore !) de UberTopics</li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

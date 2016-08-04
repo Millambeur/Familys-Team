@@ -1,0 +1,26 @@
+{# src/Altgeek/ForumBundle/Resources/views/UberTopic/view.html.twig #}
+
+{% extends "AltgeekForumBundle::index.html.twig" %}
+
+{% block title %}
+  Lecture d'un UberTopic - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+	<h2>{{ uberTopic.title }}</h2>
+	<i>Par {{ uberTopic.author }}, categorie : {{ uberTopic.category }}</i>
+
+	<p>
+		<a href="{{ path('altgeek_forum_ubertopic_index') }}" class="btn btn-default">
+		  Retour à la liste
+		</a>
+		<a href="{{ path('altgeek_forum_ubertopic_edit', {'id': uberTopic.id}) }}" class="btn btn-default">
+		  Modifier le UberTopic
+		</a>
+		<a href="{{ path('altgeek_forum_ubertopic_delete', {'id': uberTopic.id}) }}" class="btn btn-danger">
+		  Supprimer le UberTopic
+		</a>
+	</p>
+
+{% endblock %}

@@ -1,3 +1,39 @@
+# Concerning the whole ForumBundle
 altgeek_forum_homepage:
     path:     /
     defaults: { _controller: AltgeekForumBundle:Forum:index }
+
+# Concerning UberTopic entity
+altgeek_forum_ubertopic_index:
+    path:      /uberTopic/index/{page}
+    defaults:
+        _controller: AltgeekForumBundle:UberTopic:index
+        page:        1
+    requirements:
+        id: \d+
+
+altgeek_forum_ubertopic_view:
+    path:      /uberTopic/view/{id}
+    defaults:
+        _controller: AltgeekForumBundle:UberTopic:view
+    requirements:
+        id: \d+
+
+altgeek_forum_ubertopic_add:
+    path:      /uberTopic/add
+    defaults:
+        _controller: AltgeekForumBundle:UberTopic:add
+
+altgeek_forum_ubertopic_edit:
+    path:      /uberTopic/edit/{id}
+    defaults:
+        _controller: AltgeekForumBundle:UberTopic:edit
+    requirements:
+        id: \d+
+
+altgeek_forum_ubertopic_delete:
+    path:      /uberTopic/delete/{id}
+    defaults:
+        _controller: AltgeekForumBundle:UberTopic:delete
+    requirements:
+        id: \d+
