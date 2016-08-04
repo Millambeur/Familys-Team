@@ -2,7 +2,6 @@
 
 namespace Altgeek\ForumBundle\Form;
 
-//use Altgeek\ForumBundle\Repository\CategoryRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -19,15 +18,6 @@ class UberTopicType extends AbstractType
 {
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
-    /*$builder->addEventListener(
-      FormEvents::PRE_SET_DATA,
-      function(FormEvent $event) {
-        $uberTopic = $event->getData();
-        if (null === $uberTopic) {
-          return;
-        }
-      }
-    );*/
     $builder
       ->add('title',TextType::class)
       ->add('category',TextType::class)

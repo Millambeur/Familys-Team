@@ -1,0 +1,4 @@
+# Concerning the whole ForumBundle
+altgeek_forum_homepage:
+    path:     /
+    defaults: { _controller: AltgeekForumBundle:Forum:index }
