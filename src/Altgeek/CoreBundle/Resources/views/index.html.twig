@@ -8,7 +8,7 @@
 
   <title>
     {% block title %}
-      Watcha Doing ?
+      Family's Team
     {% endblock %}
   </title>
 
@@ -25,7 +25,7 @@
   <div class="container">
 
     {% block header %}
-      {{ include("AltgeekCoreBundle:CoreViews:header.html.twig") }}
+      {{ include("AltgeekCoreBundle:Core:header.html.twig") }}
     {% endblock %}
 
 	<div id="content" class="col-md-9">
@@ -35,12 +35,12 @@
 	</div>
 
   {% block footer %}
-    {{ include("AltgeekCoreBundle:CoreViews:footer.html.twig") }}
+    {{ include("AltgeekCoreBundle:Core:footer.html.twig") }}
   {% endblock %}
 
   {% block javascripts %}
     {% javascripts filter='?jsqueeze'
-      'bundles/altgeekcv/js/CVMain.js' %}
+      'bundles/altgeekcore/js/CoreMain.js' %}
       <script type="text/javascript" src="{{ asset('bundles/altgeekcore/js/coreMain.js') }}"></script>
     {% endjavascripts %}
   {% endblock %}

@@ -1,0 +1,35 @@
+{# src/ForumBundle/Ressources/views/index.html.twig #}
+
+{% extends "AltgeekCoreBundle::index.html.twig" %}
+
+  {% block title %}
+    {{ parent() }} - Forum
+  {% endblock %}
+
+  {% block stylesheets %}
+    {% stylesheets filter='cssrewrite, ?scssphp'
+      'bundles/altgeekforum/css/forumMain.css' %}
+      {{ parent() }}
+      <link rel="stylesheet" href="{{ asset('bundles/altgeekforum/css/forumMain.css') }}" type="text/css" />
+    {% endstylesheets %}
+  {% endblock %}
+
+  {% block header %}
+    {{ parent() }}
+  {% endblock %}
+
+  {% block body %}
+    <p> {{ 'Forum content'|trans }} </p>
+	{% endblock %}
+
+  {% block footer %}
+    {{ parent() }}
+  {% endblock %}
+
+  {% block javascripts %}
+    {% javascripts filter='?jsqueeze'
+      'bundles/altgeekforum/js/forumMain.js' %}
+      {{ parent() }}
+      <script type="text/javascript" src="{{ asset('bundles/altgeekforum/js/forumMain.js') }}"></script>
+    {% endjavascripts %}
+  {% endblock %}
