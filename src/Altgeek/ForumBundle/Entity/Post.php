@@ -59,7 +59,7 @@ class Post
     /**
      * @var
      *
-     * @ORM\OneToMany(targetEntity="Altgeek\UserBundle\Entity\Post", mappedBy="post")
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="author")
      */
     private $previousVersions;
 

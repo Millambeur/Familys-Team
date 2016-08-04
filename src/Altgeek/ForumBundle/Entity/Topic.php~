@@ -107,6 +107,48 @@ class Topic
     }
 
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add post
+     *
+     * @param \Altgeek\ForumBundle\Entity\Post $post
+     *
+     * @return Topic
+     */
+    public function addPost(\Altgeek\ForumBundle\Entity\Post $post)
+    {
+        $this->posts[] = $post;
+
+        return $this;
+    }
+
+    /**
+     * Remove post
+     *
+     * @param \Altgeek\ForumBundle\Entity\Post $post
+     */
+    public function removePost(\Altgeek\ForumBundle\Entity\Post $post)
+    {
+        $this->posts->removeElement($post);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
      * Set author
      *
      * @param \Altgeek\UserBundle\Entity\User $author
