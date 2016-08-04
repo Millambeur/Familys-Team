@@ -13,13 +13,20 @@
   </title>
 
   {% block stylesheets %}
-  	<link rel="stylesheet" href="{{ asset('css/coreStyle.css') }}">
+      {% stylesheets filter='cssrewrite, ?scssphp'
+      'bundles/altgeekcore/css/CoreMain.css' %}
+        <link rel="stylesheet" href="{{ asset('bundles/altgeekcore/css/coreMain.css') }}" type="text/css" />
+      {% endstylesheets %}
   {% endblock %}
+
 </head>
 
 <body>
   <div class="container">
-    {{ include("AltgeekCoreBundle:CoreViews:header.html.twig") }}
+
+    {% block header %}
+      {{ include("AltgeekCoreBundle:CoreViews:header.html.twig") }}
+    {% endblock %}
 
 	<div id="content" class="col-md-9">
 		{% block body %}
@@ -27,6 +34,16 @@
 		{% endblock %}
 	</div>
 
+  {% block footer %}
     {{ include("AltgeekCoreBundle:CoreViews:footer.html.twig") }}
+  {% endblock %}
+
+  {% block javascripts %}
+    {% javascripts filter='?jsqueeze'
+      'bundles/altgeekcv/js/CVMain.js' %}
+      <script type="text/javascript" src="{{ asset('bundles/altgeekcore/js/coreMain.js') }}"></script>
+    {% endjavascripts %}
+  {% endblock %}
+
 </body>
 </html>
