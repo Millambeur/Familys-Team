@@ -19,21 +19,19 @@ class UberTopicType extends AbstractType
 {
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
-    $builder->addEventListener(
+    /*$builder->addEventListener(
       FormEvents::PRE_SET_DATA,
       function(FormEvent $event) {
         $uberTopic = $event->getData();
         if (null === $uberTopic) {
           return;
         }
-
-        if (!$uberTopic->getPublished() || null === $advert->getId()) {
-          $event->getForm()->add('published', CheckboxType::class, array('required' => false));
-        } else {
-          $event->getForm()->remove('published');
-        }
       }
-    );
+    );*/
+    $builder
+      ->add('title',TextType::class)
+      ->add('category',TextType::class)
+      ->add('save',      SubmitType::class);
   }
   public function configureOptions(OptionsResolver $resolver)
   {

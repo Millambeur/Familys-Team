@@ -6,8 +6,8 @@ use Altgeek\ForumBundle\Entity\UberTopic;
 use Altgeek\ForumBundle\Entity\Topic;
 use Altgeek\ForumBundle\Event\MessagePostEvent;
 use Altgeek\ForumBundle\Event\ForumEvents;
-use Altgeek\ForumBundle\Form\UberEditType;
-use Altgeek\ForumBundle\Form\UberType;
+use Altgeek\ForumBundle\Form\UberTopicEditType;
+use Altgeek\ForumBundle\Form\UberTopicType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -68,10 +68,10 @@ class UberTopicController extends Controller
 		$uberTopic = new UberTopic();
 		$form   = $this->get('form.factory')->create(UberTopicType::class, $uberTopic);
 		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-		  $event = new MessagePostEvent($uberTopic->getCategory(), $uberTopic->getTitle());
-		  $this->get('event_dispatcher')->dispatch(PlatformEvents::POST_MESSAGE, $event);
+		  //$event = new MessagePostEvent($uberTopic->getCategory(), $uberTopic->getUser());
+		  //$this->get('event_dispatcher')->dispatch(PlatformEvents::POST_MESSAGE, $event);
 
-		  $uberTopic->setContent($event->getMessage());
+		  //$uberTopic->setContent($event->getMessage());
 		  $em = $this->getDoctrine()->getManager();
 		  $em->persist($uberTopic);
 		  $em->flush();

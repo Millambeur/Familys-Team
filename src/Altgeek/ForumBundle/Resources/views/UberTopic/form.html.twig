@@ -1,16 +1,42 @@
 {# src/Altgeek/ForumBundle/Resources/views/UberTopic/form.html.twig #}
 
-{% extends "AltgeekForumBundle::index.html.twig" %}
+<h3>Formulaire de UberTopics</h3>
 
-{% block body %}
+<div class="well">
+  {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
-  <h2>Ajouter un UberTopic</h2>
+  {# Les erreurs générales du formulaire. #}
+  {{ form_errors(form) }}
 
-  {{ include("AltgeekForumBundle:UberTopic:form.html.twig") }}
+  <div class="form-group">
+    {# Génération du label. #}
+    {{ form_label(form.title, "Titre du UberTopic", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
 
-  <p>
-    Attention : cet UberTopic sera ajoutée directement
-    sur la page des UberTopics après validation du formulaire.
-  </p>
+    {{ form_errors(form.title) }}
 
-{% endblock %}
+    <div class="col-sm-10">
+      {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    {{ form_label(form.category, "Catégorie du UberTopic", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+
+    {{ form_errors(form.category) }}
+
+    <div class="col-sm-10">
+      {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+    </div>
+  </div>
+
+  {# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
+  {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+  {# Génération automatique des champs pas encore écrits.
+     Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
+     et tous les champs cachés (type « hidden »). #}
+  {{ form_rest(form) }}
+
+  {{ form_end(form) }}
+</div>
+
