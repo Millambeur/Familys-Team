@@ -1,3 +1,14 @@
 altgeek_core:
     resource: "@AltgeekCoreBundle/Resources/config/routing.yml"
     prefix:   /
+
+login:
+    path: /login
+    defaults:
+        _controller: AltgeekUserBundle:Security:login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
