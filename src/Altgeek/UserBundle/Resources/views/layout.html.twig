@@ -1,0 +1,34 @@
+{# src/UserBundle/Ressources/views/layout.html.twig #}
+
+{% extends "AltgeekCoreBundle::layout.html.twig" %}
+
+  {% block title %}
+    User - {{ parent() }}
+  {% endblock %}
+
+  {% block stylesheets %}
+    {% stylesheets filter='cssrewrite, ?scssphp'
+      'bundles/altgeekuser/css/userMain.css' %}
+      {{ parent() }}
+      <link rel="stylesheet" href="{{ asset('bundles/altgeekuser/css/userMain.css') }}" type="text/css" />
+    {% endstylesheets %}
+  {% endblock %}
+
+  {% block header %}
+    {{ parent() }}
+  {% endblock %}
+
+  {% block body %}
+	{% endblock %}
+
+  {% block footer %}
+    {{ parent() }}
+  {% endblock %}
+
+  {% block javascripts %}
+    {% javascripts filter='?jsqueeze'
+      'bundles/altgeekuser/js/userMain.js' %}
+      {{ parent() }}
+      <script type="text/javascript" src="{{ asset('bundles/altgeekuser/js/userMain.js') }}"></script>
+    {% endjavascripts %}
+  {% endblock %}
