@@ -1,0 +1,25 @@
+{# src/Altgeek/ForumBundle/Resources/views/UberTopic/delete.html.twig #}
+
+{% extends "AltgeekForumBundle::layout.html.twig" %}
+
+{% block title %}
+  Supprimer un UberTopic - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2>Supprimer un UberTopic</h2>
+
+  <p>
+    Etes-vous certain de vouloir supprimer le UberTopic "{{ uberTopic.title }}" ?
+  </p>
+
+  <form action="{{ path('altgeek_forum_ubertopic_delete', {'id': uberTopic.id}) }}" method="post">
+    <a href="{{ path('altgeek_forum_ubertopic_view', {'id': uberTopic.id}) }}" class="btn btn-default">
+      Retour au UberTopic
+    </a>
+    <input type="submit" value="Supprimer" class="btn btn-danger" />
+    {{ form_rest(form) }}
+  </form>
+
+{% endblock %}

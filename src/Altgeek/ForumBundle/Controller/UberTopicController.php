@@ -68,10 +68,6 @@ class UberTopicController extends Controller
 		$uberTopic = new UberTopic();
 		$form   = $this->get('form.factory')->create(UberTopicType::class, $uberTopic);
 		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-		  //$event = new MessagePostEvent($uberTopic->getCategory(), $uberTopic->getUser());
-		  //$this->get('event_dispatcher')->dispatch(PlatformEvents::POST_MESSAGE, $event);
-
-		  //$uberTopic->setContent($event->getMessage());
 		  $em = $this->getDoctrine()->getManager();
 		  $em->persist($uberTopic);
 		  $em->flush();
@@ -87,7 +83,6 @@ class UberTopicController extends Controller
 	{
 		$form = $this->get('form.factory')->create(UberTopicType::class, $uberTopic);
 		if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-			// Inutile de persister ici, Doctrine connait déjà notre annonce
 			$em = $this->getDoctrine()->getManager();
 			$em->flush();
 			$request->getSession()->getFlashBag()->add('notice', 'UberTopic bien modifiée.');
