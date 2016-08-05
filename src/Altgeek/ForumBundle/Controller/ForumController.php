@@ -8,6 +8,6 @@ class ForumController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('AltgeekForumBundle::index.html.twig');
+        return $this->render('AltgeekForumBundle::layout.html.twig');
     }
 }
