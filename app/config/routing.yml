@@ -6,6 +6,10 @@ altgeek_forum:
     resource: "@AltgeekForumBundle/Resources/config/routing.yml"
     prefix:   /forum
 
+altgeek_user:
+    resource: "@AltgeekUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
 login:
     path: /login
     defaults:

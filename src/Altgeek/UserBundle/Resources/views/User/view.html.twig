@@ -8,6 +8,18 @@
 
 {% block body %}
 
-	<h2>HELLO {{ user.firstname uberTopic.category }} (VIEW)</h2>
+	<h2>HELLO {{ user.firstName }} {{ user.familyName }} !!! (VIEW)</h2>
+
+	<p>
+		<a href="{{ path('altgeek_user_index') }}" class="btn btn-default">
+		  Retour à la liste
+		</a>
+		<a href="{{ path('altgeek_user_edit', {'id': user.id}) }}" class="btn btn-default">
+		  Modifier le User
+		</a>
+		<a href="{{ path('altgeek_user_delete', {'id': user.id}) }}" class="btn btn-danger">
+		  Supprimer le User
+		</a>
+	</p>
 
 {% endblock %}

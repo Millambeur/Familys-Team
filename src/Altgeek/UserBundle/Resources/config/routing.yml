@@ -1,3 +1,32 @@
-altgeek_user_homepage:
-    path:     /
-    defaults: { _controller: AltgeekUserBundle:User:index }
+# Concerning User entity
+altgeek_user_index:
+    path:     /index/{page}
+    defaults:
+      _controller: AltgeekUserBundle:User:index
+      page:        1
+    requirements:
+        id: \d+
+
+altgeek_user_view:
+    path:     /view/{id}
+    defaults:
+      _controller: AltgeekUserBundle:User:view
+
+altgeek_user_add:
+    path:     /add
+    defaults:
+      _controller: AltgeekUserBundle:User:add
+
+altgeek_user_edit:
+    path:      /edit/{id}
+    defaults:
+        _controller: AltgeekUserBundle:User:edit
+    requirements:
+        id: \d+
+
+altgeek_user_delete:
+    path:      /delete/{id}
+    defaults:
+        _controller: AltgeekUserBundle:User:delete
+    requirements:
+        id: \d+

@@ -8,6 +8,18 @@
 
 {% block body %}
 
-  <h2>HELLO {{ user.firstname uberTopic.category }} (INDEX)</h2>
+		<h2>Liste des Users</h2>
+
+		<ul>
+			{% for user in listUsers %}
+			  <li>
+			    <a href="{{ path('altgeek_user_view', {'id': user.id}) }}">
+			      {{ user.firstName }} {{ user.familyName }}
+			    </a>
+			  </li>
+			{% else %}
+			  <li>Pas (encore !) de Users</li>
+			{% endfor %}
+		</ul>
 
 {% endblock %}

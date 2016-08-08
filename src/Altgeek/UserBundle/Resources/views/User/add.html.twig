@@ -1,0 +1,20 @@
+{# src/Altgeek/UserBundle/Resources/views/User/add.html.twig #}
+
+{% extends "AltgeekUserBundle::layout.html.twig" %}
+
+{% block title %}
+  Ajouter un User - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2>Ajouter un User</h2>
+
+  {{ include("AltgeekUserBundle:User:form.html.twig") }}
+
+  <p>
+    Attention : ce User sera ajoutée directement
+    sur la page des Users après validation du formulaire.
+  </p>
+
+{% endblock %}

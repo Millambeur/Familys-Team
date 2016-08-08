@@ -4,8 +4,6 @@ namespace Altgeek\ForumBundle\Controller;
 
 use Altgeek\ForumBundle\Entity\UberTopic;
 use Altgeek\ForumBundle\Entity\Topic;
-use Altgeek\ForumBundle\Event\MessagePostEvent;
-use Altgeek\ForumBundle\Event\ForumEvents;
 use Altgeek\ForumBundle\Form\UberTopicEditType;
 use Altgeek\ForumBundle\Form\UberTopicType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -112,6 +110,4 @@ class UberTopicController extends Controller
 		  'form'   => $form->createView(),
 		));
 	}
-
-
 }

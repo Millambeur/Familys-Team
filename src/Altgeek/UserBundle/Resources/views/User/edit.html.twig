@@ -1,0 +1,25 @@
+{# src/Altgeek/UserBundle/Resources/views/User/edit.html.twig #}
+
+{% extends "AltgeekUserBundle::layout.html.twig" %}
+
+{% block title %}
+  Modifier un User - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2>Modifier un User</h2>
+
+  {{ include("AltgeekUserBundle:User:form.html.twig") }}
+
+  <p>
+    Vous éditez un User déjà existant.
+  </p>
+
+  <p>
+    <a href="{{ path('altgeek_user_view', {'id': user.id}) }}" class="btn btn-default">
+      Retour au User
+    </a>
+  </p>
+
+{% endblock %}
