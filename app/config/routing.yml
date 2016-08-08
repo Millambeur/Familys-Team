@@ -1,6 +1,6 @@
+# Concerning the Bundles
 altgeek_core:
     resource: "@AltgeekCoreBundle/Resources/config/routing.yml"
-    prefix:   /
 
 altgeek_forum:
     resource: "@AltgeekForumBundle/Resources/config/routing.yml"
@@ -10,13 +10,22 @@ altgeek_user:
     resource: "@AltgeekUserBundle/Resources/config/routing.yml"
     prefix:   /user
 
-login:
-    path: /login
-    defaults:
-        _controller: AltgeekUserBundle:Security:login
+# Concerning fosuser Bundle
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
-login_check:
-    path: /login_check
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
 
-logout:
-    path: /logout
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
